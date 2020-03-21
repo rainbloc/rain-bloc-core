@@ -120,7 +120,6 @@ Widget homePageListOfButtons({double btnWidth}) {
         ),
         /* Flat Button On Press*/
         onPressed: () {
-          // goToPage('/sedekah-page');
           print("Page pressed 2");
         },
       ),
@@ -132,4 +131,7 @@ List<dynamic> homePageIconList = [
   customIcon(CustomFontIcon.islam, text: "Cari\nMasjid"),
   customIcon(CustomFontIcon.newspaper, text: "Portal\nBerita"),
   customIcon(CustomFontIcon.quran_rehal, text: "Quran & Sunnah"),
+  customIcon(Icons.favorite_border, text: "Berita\nfavorit"),
+  customIcon(Icons.event, text: "Acara\npenting"),
+  customIcon(Icons.build, text: "Konfigurasi\nSaya"),
 ];

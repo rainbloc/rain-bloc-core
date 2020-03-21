@@ -3,14 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hello_bloc/BLoCs/BlocContainer.dart';
 import 'package:hello_bloc/BLoCs/NewsBloc/NewsBloc.dart';
-import 'package:hello_bloc/BLoCs/NewsBloc/NewsBloc.dart';
-import 'package:hello_bloc/Cores/ViewComponents/CustomFontIcon.dart';
-import 'package:hello_bloc/Cores/ViewComponents/customIcon.dart';
-import 'package:hello_bloc/Cores/publicFunctions.dart';
-import 'package:hello_bloc/DataSources/ImageStaticList.dart';
-import 'package:hello_bloc/DataSources/LocationDSModel.dart';
-import 'package:hello_bloc/DataSources/REST/Newsapi.org/DSRestNewsApi.dart';
-import 'package:hello_bloc/UiViews/RestaurantView.dart';
 
 import 'HomepageComponents/HomepageFeed.dart';
 
@@ -57,99 +49,96 @@ class HomePage extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      child: SingleChildScrollView(
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                      stops: [
-                                    0.15,
-                                    1
-                                  ],
-                                      colors: [
-                                    Color(0xFF11998E),
-                                    Color(0x00000000)
-                                  ])),
-                              child: Column(
-                                // mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 250,
-                                  ),
-                                  Text("Dana yang terkumpul bulan ini mencapai",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 12)),
-                                  SizedBox(height: 20),
-                                  Text("2,578,001",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 52)),
-                                  SizedBox(height: 20),
-                                  SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width - 40,
-                                    child: _buttons,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Container(
-                                      height: 140,
-                                      padding: new EdgeInsets.only(
-                                          left: 20, right: 20),
-                                      child: Column(children: <Widget>[
-                                        Expanded(
-                                          child: GridView.builder(
-                                            // Create a grid with 2 columns. If you change the scrollDirection to
-                                            // horizontal, this would produce 2 rows.
-                                            shrinkWrap: true,
-                                            scrollDirection: Axis.vertical,
-                                            itemCount: 3,
-                                            physics:
-                                                NeverScrollableScrollPhysics(),
-                                            gridDelegate:
-                                                new SliverGridDelegateWithFixedCrossAxisCount(
-                                                    crossAxisCount: 3),
-                                            // Generate 100 Widgets that display their index in the List
-                                            itemBuilder: (BuildContext context,
-                                                int itemIndex) {
-                                              return new GestureDetector(
-                                                  child: new Card(
-                                                    color: Colors.black
-                                                        .withOpacity(0.3),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15.0),
-                                                    ),
-                                                    elevation: 0.0,
-                                                    margin:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 10,
-                                                            horizontal: 10),
-                                                    child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(10.0),
-                                                        child:
-                                                            icons[itemIndex]),
-                                                  ),
-                                                  onTap: () {
-                                                    print('tapped');
-                                                  });
-                                            },
-                                          ),
-                                        )
-                                      ])),
-                                  Container(
-                                      height: 400,
-                                      // child: homePageLoadFeed(context))
-                                      child: _buildResults(bloc)),
-                                ],
-                              )))),
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    child: SingleChildScrollView(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                stops: [
+                              0.15,
+                              1
+                            ],
+                                colors: [
+                              Color(0xFF11998E),
+                              Color(0x00000000)
+                            ])),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 250,
+                            ),
+                            Text(
+                              "Dana yang terkumpul bulan ini mencapai",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                            SizedBox(height: 20),
+                            Text("2,578,001",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 52)),
+                            SizedBox(height: 20),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width - 40,
+                              child: _buttons,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                                height: 240,
+                                padding:
+                                    new EdgeInsets.only(left: 20, right: 20),
+                                child: Column(children: <Widget>[
+                                  Expanded(
+                                    child: GridView.builder(
+                                      // Create a grid with 2 columns. If you change the scrollDirection to
+                                      // horizontal, this would produce 2 rows.
+                                      shrinkWrap: true,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount: 6,
+                                      physics: NeverScrollableScrollPhysics(),
+                                      gridDelegate:
+                                          new SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 3),
+                                      // Generate 100 Widgets that display their index in the List
+                                      itemBuilder: (BuildContext context,
+                                          int itemIndex) {
+                                        return new GestureDetector(
+                                            child: new Card(
+                                              color:
+                                                  Colors.black.withOpacity(0.3),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              elevation: 0.0,
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: 10, horizontal: 10),
+                                              child: Padding(
+                                                  padding: const EdgeInsets.all(
+                                                      10.0),
+                                                  child: icons[itemIndex]),
+                                            ),
+                                            onTap: () {
+                                              print('tapped');
+                                            });
+                                      },
+                                    ),
+                                  )
+                                ])),
+                            Container(
+                                height: 400,
+                                // child: homePageLoadFeed(context))
+                                child: _buildResults(bloc)),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

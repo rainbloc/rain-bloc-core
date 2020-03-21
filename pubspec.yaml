@@ -27,7 +27,8 @@ dependencies:
   http: ^0.12.0+2
   url_launcher: ^5.4.2
   intl: ^0.16.1
-
+  shared_preferences: ^0.5.6+3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -43,6 +44,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+     - assets/images/
+     
   fonts:
     - family: Hello_bloc
       fonts:
