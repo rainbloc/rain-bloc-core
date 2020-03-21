@@ -44,12 +44,6 @@ class HomeView extends StatelessWidget {
     return StreamBuilder<dynamic>(
       stream: bloc.stream,
       builder: (context, snapshot) {
-        Map<dynamic, dynamic> map = {
-          'r': [
-            {'name': 'Rendy'}
-          ]
-        };
-        print(map.runtimeType);
         // 1
         final results = snapshot.data;
 
@@ -58,7 +52,11 @@ class HomeView extends StatelessWidget {
         }
 
         if (results.isEmpty) {
-          return Center(child: Text('No Results'));
+          return Center(
+              child: Image(
+            image: NetworkImage(
+                'https://www.drcycle.in/assets/images/NoRecordFound.png'),
+          ));
         }
 
         //if it has data show it here

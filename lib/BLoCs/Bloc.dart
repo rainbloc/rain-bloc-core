@@ -26,4 +26,8 @@ class BlocMaster implements Bloc{
   void dispose() {
     blocController.close();
   }
+
+  void sendStream(dynamic data){
+    this.blocController.sink.add(data);
+  }
 }

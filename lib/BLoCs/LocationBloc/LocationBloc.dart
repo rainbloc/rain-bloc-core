@@ -7,6 +7,8 @@ import '../Bloc.dart';
 class LocationBloc extends BlocMaster{
   LocationDSModel _location;
   LocationDSModel get selectedLocation => _location;
+  String _currentQuery;
+  String get currentQuery => _currentQuery;
   final _client = DSRestZomatoClient();
 
   /* [3]
@@ -18,13 +20,13 @@ class LocationBloc extends BlocMaster{
    */ 
   void selectLocation(LocationDSModel location) {
     _location = location;
-    this.blocController.sink.add(location);
+    this.sendStream(location);
   }
 
   void findLocation(String query) async {
     // 1
-    print("find location");
+    _currentQuery = query;
     final results = await _client.fetchLocations(query);
-    this.blocController.sink.add(results);
+    this.sendStream(results);
   }
 }

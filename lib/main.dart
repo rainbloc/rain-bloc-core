@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hello_bloc/BLoCs/BlocContainer.dart';
 import 'package:hello_bloc/BLoCs/LocationBloc/LocationBloc.dart';
 import 'package:hello_bloc/DataSources/LocationDSModel.dart';
-import 'package:hello_bloc/UiViews/HomeView.dart';
+// import 'package:hello_bloc/UiViews/HomeView.dart';
 import 'package:hello_bloc/UiViews/RestaurantView.dart';
+
+import 'UiViews/HomePage.dart';
 
 void main() { runApp(MainApp()); }
 
@@ -30,11 +32,9 @@ class MainScreen extends StatelessWidget {
       stream: BlocContainer.of<LocationBloc>(context).stream,
       builder: (context, snapshot) {
         final LocationDSModel location = snapshot.data;
-        print("location $location");
-        print(location);
 
         if (location == null) {
-          return HomeView();
+          return HomePage();
         }
         
         print(location.title);

@@ -80,8 +80,6 @@ class DSRestZomatoClient {
     final results = await http.get(uri, headers: _headers);
  
     final jsonObject = json.decode(results.body);
-    print("QUERY Result here");
-    print(jsonObject);
     return jsonObject;
   }
 
