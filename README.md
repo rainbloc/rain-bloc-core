@@ -1,4 +1,6 @@
-![Imgur](https://i.imgur.com/EbGpvGO.png)
+<p align="center">
+  <img src="https://i.imgur.com/EbGpvGO.png">
+</p>
 
 # RainBLoC
 
