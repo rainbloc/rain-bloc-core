@@ -41,7 +41,7 @@ then you can run it by using
 
 or if you want to using VCS
 
-![Imgur](https://i.imgur.com/yUWTfG2.png)
+<img align="left" width="250" src="https://i.imgur.com/EbGpvGO.png">
 
 # \# Official Flutter Help
 Below are few resources that can help you getting started, if this is your first Flutter project:
