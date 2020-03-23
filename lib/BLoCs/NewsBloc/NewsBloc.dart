@@ -2,17 +2,29 @@ import 'dart:async';
 
 import 'package:hello_bloc/BLoCs/Bloc.dart';
 import 'package:hello_bloc/DataSources/REST/Newsapi.org/DSRestNewsApi.dart';
+import 'package:hello_bloc/DataSources/SharedPref/SPNews.dart';
 
-class NewsBloc extends BlocMaster{
-
-
-  final _newsClient = DSRestNewsApi();
+class NewsBloc extends BlocMaster {
+  final _restNewsClient = DSRestNewsApi();
+  final _cacheSPNews = SPNews();
 
   final _newsController = StreamController<Map<dynamic, dynamic>>();
   Stream<Map<dynamic, dynamic>> get stream => _newsController.stream;
 
   void getNews() async {
-    final results = await _newsClient.getNews();
+    
+    // Get From REST API
+    Map results;
+    final cache = await _cacheSPNews.getNewsCache();
+     print("CACHE 1 : ${cache["created_time"]}");
+    if (cache["error"] != null) {
+      results = await _restNewsClient.getNews();
+      _cacheSPNews.setNewsCache(results);
+
+    } else {
+      results = cache;
+    }
+    print("CACHE ${results["created_time"]}");
     _newsController.sink.add(results);
   }
 

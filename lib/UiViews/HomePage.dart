@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hello_bloc/BLoCs/BlocContainer.dart';
 import 'package:hello_bloc/BLoCs/NewsBloc/NewsBloc.dart';
+import 'package:hello_bloc/DataSources/SharedPref/SPMember.dart';
 
 import 'HomepageComponents/HomepageFeed.dart';
 
@@ -21,6 +22,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = NewsBloc();
     bloc.getNews();
+
+    //test Shared Preferences
+
     final icons = homePageIconList;
     final double btnWidth = (MediaQuery.of(context).size.width / 2) - 30;
     final Widget _buttons = homePageListOfButtons(btnWidth: btnWidth);
