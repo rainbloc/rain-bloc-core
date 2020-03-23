@@ -22,18 +22,26 @@ Before you starting with our RainBLoC, We suggesting You to use Visual Code Stud
 
 We will not explain further about how you start/install your flutter. If you need this kind of installation information you can check it in here [Flutter Installation](https://flutter.dev/docs/get-started/install)
 
+Open your Terminal/Cmd/Gitbash
+
+#### \#1 Clone github
 You can do it by using easy clone from this project
 
 ```git clone https://github.com/rainbloc/rain-bloc-core```
 
 After cloning the Project you should run
 
+#### \#2 Clean it and get pub package
 - ``` flutter clean ```
 - ``` flutter packages get ``` or ``` flutter pub get```
 
+#### \#3 Clean it and get pub package
 then you can run it by using
 - ```flutter run```
 
+or if you want to using VCS
+
+![Imgur](https://i.imgur.com/yUWTfG2.png)
 
 # \# Official Flutter Help
 Below are few resources that can help you getting started, if this is your first Flutter project:
