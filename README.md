@@ -22,37 +22,41 @@ Before you starting with our RainBLoC, We suggesting You to use Visual Code Stud
 
 We will not explain further about how you start/install your flutter. If you need this kind of installation information you can check it in here [Flutter Installation](https://flutter.dev/docs/get-started/install)
 
-Open your Terminal/Cmd/Gitbash
+If you finish your flutter installation you can go trough for the next step.
+
+Open your **Terminal** (_Mac/Linux_) / **Cmd or Gitbash** (_Windows_). And then : 
+
 
 #### \#1 Clone github
 You can do it by using easy clone from this project
 
 ```git clone https://github.com/rainbloc/rain-bloc-core```
 
-After cloning the Project you should run
+
 
 #### \#2 Clean it and get pub package
+After cloning the Project you should run :
 - ``` flutter clean ```
 - ``` flutter packages get ``` or ``` flutter pub get```
 
-#### \#3 Clean it and get pub package
+#### \#3 run your Flutter Package
 then you can run it by using
 - ```flutter run```
 
-or if you want to using VCS
+or if you want to using VCS see the screenshoot below:
 <p>
     <img  width="350" src="https://i.imgur.com/yUWTfG2.png"/>
 </p>
 
-## \# Official Flutter Help
-Below are few resources that can help you getting started, if this is your first Flutter project:
+---
+Now lets learn more about RainBLoC
+- RainBLoC Architecture
+- Call REST API
+- Using Local Storage
+- Use Available Widget
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For further help to getting started with Flutter, view flutter official docs [online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+for further information please see
+our Wiki, [Rainbloc Wiki](https://github.com/rainbloc/rain-bloc-core/wiki)
 Help & Support
 You can reach me @ my Linkedin account:
 [LinkedIn](https://www.linkedin.com/in/rendyas/)
