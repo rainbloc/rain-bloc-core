@@ -58,6 +58,6 @@ Now lets learn more about RainBLoC
 for further information please see
 our Wiki, [Rainbloc Wiki](https://github.com/rainbloc/rain-bloc-core/wiki)
 
-Help & Support
+## Help & Support
 You can reach me @ my Linkedin account:
 [LinkedIn](https://www.linkedin.com/in/rendyas/)
