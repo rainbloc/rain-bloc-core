@@ -40,10 +40,11 @@ then you can run it by using
 - ```flutter run```
 
 or if you want to using VCS
+<p>
+    <img  width="350" src="https://i.imgur.com/yUWTfG2.png"/>
+</p>
 
-<img align="left" width="250" src="https://i.imgur.com/EbGpvGO.png">
-
-# \# Official Flutter Help
+## \# Official Flutter Help
 Below are few resources that can help you getting started, if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
