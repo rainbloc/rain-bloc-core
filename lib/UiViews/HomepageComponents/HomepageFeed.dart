@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hello_bloc/Cores/ViewComponents/CustomFontIcon.dart';
-import 'package:hello_bloc/Cores/ViewComponents/customIcon.dart';
-import 'package:hello_bloc/Cores/publicFunctions.dart';
+import 'package:rain_bloc/Cores/ViewComponents/CustomFontIcon.dart';
+import 'package:rain_bloc/Cores/ViewComponents/customIcon.dart';
+import 'package:rain_bloc/Cores/publicFunctions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget homePageLoadFeed(BuildContext context, {Map data}) {

@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:hello_bloc/BLoCs/BlocContainer.dart';
-import 'package:hello_bloc/BLoCs/NewsBloc/NewsBloc.dart';
-import 'package:hello_bloc/DataSources/SharedPref/SPMember.dart';
+import 'package:rain_bloc/BLoCs/BlocContainer.dart';
+import 'package:rain_bloc/BLoCs/NewsBloc/NewsBloc.dart';
+import 'package:rain_bloc/DataSources/SharedPref/SPMember.dart';
 
 import 'HomepageComponents/HomepageFeed.dart';
 

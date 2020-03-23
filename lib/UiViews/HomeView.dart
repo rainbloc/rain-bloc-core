@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hello_bloc/BLoCs/BlocContainer.dart';
-import 'package:hello_bloc/BLoCs/LocationBloc/LocationBloc.dart';
-import 'package:hello_bloc/Cores/publicFunctions.dart';
-import 'package:hello_bloc/DataSources/LocationDSModel.dart';
-import 'package:hello_bloc/UiViews/RestaurantView.dart';
+import 'package:rain_bloc/BLoCs/BlocContainer.dart';
+import 'package:rain_bloc/BLoCs/LocationBloc/LocationBloc.dart';
+import 'package:rain_bloc/Cores/publicFunctions.dart';
+import 'package:rain_bloc/DataSources/LocationDSModel.dart';
+import 'package:rain_bloc/UiViews/RestaurantView.dart';
 
 class HomeView extends StatelessWidget {
   final bool isFullScreenDialog;

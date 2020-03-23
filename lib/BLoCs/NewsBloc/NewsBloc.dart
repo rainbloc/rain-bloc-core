@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:hello_bloc/BLoCs/Bloc.dart';
-import 'package:hello_bloc/DataSources/REST/Newsapi.org/DSRestNewsApi.dart';
-import 'package:hello_bloc/DataSources/SharedPref/SPNews.dart';
+import 'package:rain_bloc/BLoCs/Bloc.dart';
+import 'package:rain_bloc/DataSources/REST/Newsapi.org/DSRestNewsApi.dart';
+import 'package:rain_bloc/DataSources/SharedPref/SPNews.dart';
 
 class NewsBloc extends BlocMaster {
   final _restNewsClient = DSRestNewsApi();
