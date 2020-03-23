@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/EsClvU8.png)
+![Imgur](https://i.imgur.com/EbGpvGO.png)
 
 # RainBLoC
 
