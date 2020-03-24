@@ -1,5 +1,5 @@
 import 'dart:convert';
-import './SharedPrefStorageMaster.dart';
+import '../../../../DataSources/SharedPref/SharedPrefStorageMaster.dart';
 
 class SPLang extends SharedPrefStorageMaster {
   String prefix = 'lang';

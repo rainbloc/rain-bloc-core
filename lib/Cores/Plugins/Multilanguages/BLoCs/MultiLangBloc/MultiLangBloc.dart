@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:rainbloc/BLoCs/Bloc.dart';
-import 'package:rainbloc/DataSources/SharedPref/SPLang.dart';
+import '../../../../../BLoCs/Bloc.dart';
+import '../../SP/SPLang.dart';
 
 class MultiLangBloc extends BlocMaster {
   final defaultLang = "en";
