@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rain_bloc/BLoCs/BlocContainer.dart';
-import 'package:rain_bloc/BLoCs/RestaurantBloc/RestaurantBloc.dart';
-import 'package:rain_bloc/DataSources/LocationDSModel.dart';
+import 'package:rainbloc/BLoCs/BlocContainer.dart';
+import 'package:rainbloc/BLoCs/RestaurantBloc/RestaurantBloc.dart';
+import 'package:rainbloc/DataSources/LocationDSModel.dart';
 
 class RestaurantView extends StatelessWidget{
 

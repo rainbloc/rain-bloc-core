@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rain_bloc/Cores/ViewComponents/CustomFontIcon.dart';
-import 'package:rain_bloc/Cores/ViewComponents/customIcon.dart';
-import 'package:rain_bloc/Cores/publicFunctions.dart';
+import 'package:rainbloc/Cores/ViewComponents/CustomFontIcon.dart';
+import 'package:rainbloc/Cores/ViewComponents/customIcon.dart';
+import 'package:rainbloc/Cores/publicFunctions.dart';
+import 'package:rainbloc/UiViews/HomePage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget homePageLoadFeed(BuildContext context, {Map data}) {
@@ -19,7 +20,7 @@ Widget homePageLoadFeed(BuildContext context, {Map data}) {
       try {
         articleItem = articles[index];
       } catch (e) {
-       return SizedBox(height:20);
+        return SizedBox(height: 20);
       }
 
       return GestureDetector(
@@ -80,51 +81,70 @@ Widget homePageLoadFeed(BuildContext context, {Map data}) {
   );
 }
 
-Widget homePageListOfButtons({double btnWidth}) {
-  return Row(children: <Widget>[
-    SizedBox(
-      width: btnWidth,
-      child: FlatButton(
-        color: Colors.transparent,
-        textColor: Color(0xFFE3E3E3),
-        padding:
-            EdgeInsets.only(top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
-        shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0),
-            side: BorderSide(color: Color(0xFFE3E3E3), width: 2.0)),
-        child: Text(
-          "Lihat Laporan",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+Widget homePageListOfButtons({double btnWidth, HomePage parentObject}) {
+  return StreamBuilder<dynamic>(
+    stream: parentObject.blocLang.stream,
+    builder: (context, streamResult) {
+      final results = streamResult.data;
+      if (results == null) {
+        return Center(child: Text('Find a location'));
+      }
+      print("Bloc Lang Stream $results");
+      if (results["lang"] != null) {
+        parentObject.lgClass.defaultLang = results["lang"];
+      }
+
+      //if it has data show it here
+      return Row(children: <Widget>[
+        SizedBox(
+          width: btnWidth,
+          child: FlatButton(
+            color: Colors.transparent,
+            textColor: Color(0xFFE3E3E3),
+            padding: EdgeInsets.only(
+                top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(30.0),
+                side: BorderSide(color: Color(0xFFE3E3E3), width: 2.0)),
+            child: Text(
+              parentObject.lgClass
+                  .getLang(key: "report_button", defaultText: "report"),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            ),
+            /* Flat Button On Press*/
+            onPressed: () {
+              parentObject.lgClass.setLang("en");
+              Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (_) => HomePage()));
+              //goToPage('/laporan-page');
+            },
+          ),
         ),
-        /* Flat Button On Press*/
-        onPressed: () {
-          print("Page pressed");
-          //goToPage('/laporan-page');
-        },
-      ),
-    ),
-    SizedBox(width: 20.0),
-    SizedBox(
-      width: btnWidth,
-      child: RaisedButton(
-        color: Color(0xFFF3F3F3),
-        textColor: Color(0xFF27ae60),
-        padding:
-            EdgeInsets.only(top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
-        shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0),
-            side: BorderSide(color: Colors.transparent, width: 2.0)),
-        child: Text(
-          "Sedekah",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+        SizedBox(width: 20.0),
+        SizedBox(
+          width: btnWidth,
+          child: RaisedButton(
+            color: Color(0xFFF3F3F3),
+            textColor: Color(0xFF27ae60),
+            padding: EdgeInsets.only(
+                top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(30.0),
+                side: BorderSide(color: Colors.transparent, width: 2.0)),
+            child: Text(
+              parentObject.lgClass
+                  .getLang(key: "help_now", defaultText: "Help now"),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            ),
+            /* Flat Button On Press*/
+            onPressed: () {
+              parentObject.blocLang.setLangCache("id");
+            },
+          ),
         ),
-        /* Flat Button On Press*/
-        onPressed: () {
-          print("Page pressed 2");
-        },
-      ),
-    ),
-  ]);
+      ]);
+    },
+  );
 }
 
 List<dynamic> homePageIconList = [

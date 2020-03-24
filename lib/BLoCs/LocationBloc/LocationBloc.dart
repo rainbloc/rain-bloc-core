@@ -1,5 +1,5 @@
-import 'package:rain_bloc/DataSources/LocationDSModel.dart';
-import 'package:rain_bloc/DataSources/REST/Zomato/DSRestZomatoClient.dart';
+import 'package:rainbloc/DataSources/LocationDSModel.dart';
+import 'package:rainbloc/DataSources/REST/Zomato/DSRestZomatoClient.dart';
 import '../Bloc.dart';
 
 // business Logic Component for Location

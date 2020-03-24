@@ -31,7 +31,7 @@
 import 'dart:async';
 import 'dart:convert' show json;
 
-import 'package:rain_bloc/DataSources/RestaurantDSModel.dart';
+import 'package:rainbloc/DataSources/RestaurantDSModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 

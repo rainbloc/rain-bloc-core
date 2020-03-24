@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:rain_bloc/BLoCs/Bloc.dart';
-import 'package:rain_bloc/DataSources/LocationDSModel.dart';
-import 'package:rain_bloc/DataSources/REST/Zomato/DSRestZomatoClient.dart';
-import 'package:rain_bloc/DataSources/RestaurantDSModel.dart';
+import 'package:rainbloc/BLoCs/Bloc.dart';
+import 'package:rainbloc/DataSources/LocationDSModel.dart';
+import 'package:rainbloc/DataSources/REST/Zomato/DSRestZomatoClient.dart';
+import 'package:rainbloc/DataSources/RestaurantDSModel.dart';
 
 class RestaurantBloc implements Bloc{
 

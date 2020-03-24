@@ -1,14 +1,16 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:rain_bloc/BLoCs/BlocContainer.dart';
-import 'package:rain_bloc/BLoCs/NewsBloc/NewsBloc.dart';
-import 'package:rain_bloc/DataSources/SharedPref/SPMember.dart';
+import 'package:rainbloc/BLoCs/BlocContainer.dart';
+import 'package:rainbloc/BLoCs/MultiLangBloc/MultiLangBloc.dart';
+import 'package:rainbloc/BLoCs/NewsBloc/NewsBloc.dart';
+import 'package:rainbloc/Cores/ViewComponents/MultiLangs.dart';
+import 'package:rainbloc/DataSources/SharedPref/SPMember.dart';
 
 import 'HomepageComponents/HomepageFeed.dart';
 
 class HomePage extends StatelessWidget {
-  final bool isFullScreenDialog;
+  final bool isFullScreenDialog = false;
   static List<String> _imageUrls = [
     'https://i.postimg.cc/RV8XxDcS/img-surv.jpg',
     'https://i.postimg.cc/L8d3vpH5/img-surv-2.jpg',
@@ -16,25 +18,33 @@ class HomePage extends StatelessWidget {
     'https://i.postimg.cc/Njk4nC09/img-surv-4.jpg',
   ];
 
-  const HomePage({Key key, this.isFullScreenDialog = false}) : super(key: key);
+  static String _defaultLang = 'id';
+  MultiLangs lgClass = new MultiLangs();
+  final blocLang = MultiLangBloc();
+
+  HomePage({Key key, bool isFullScreenDialog}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final bloc = NewsBloc();
-    bloc.getNews();
+    final blocNews = NewsBloc();
 
+    blocNews.getNews();
+    blocLang.getLang();
+
+    print("set default Lang ${lgClass.defaultLang}");
     //test Shared Preferences
 
     final icons = homePageIconList;
     final double btnWidth = (MediaQuery.of(context).size.width / 2) - 30;
-    final Widget _buttons = homePageListOfButtons(btnWidth: btnWidth);
+    final Widget _buttons =
+        homePageListOfButtons(btnWidth: btnWidth, parentObject: this);
 
     var rnd = new Random();
     var r = 0 + rnd.nextInt(_imageUrls.length - 0);
 
     //View based on Bloc Container
     return BlocContainer<NewsBloc>(
-        bloc: bloc,
+        bloc: blocNews,
         child: Scaffold(
           // appBar: AppBar(title: Text('Where do you want to eat?')),
           resizeToAvoidBottomPadding: false,
@@ -76,7 +86,9 @@ class HomePage extends StatelessWidget {
                               height: 250,
                             ),
                             Text(
-                              "Dana yang terkumpul bulan ini mencapai",
+                              lgClass.getLang(
+                                  key: "current_fund_text",
+                                  defaultText: "Hello World"),
                               style:
                                   TextStyle(color: Colors.white, fontSize: 12),
                             ),
@@ -128,6 +140,7 @@ class HomePage extends StatelessWidget {
                                                   child: icons[itemIndex]),
                                             ),
                                             onTap: () {
+                                              lgClass.defaultLang = "en";
                                               print('tapped');
                                             });
                                       },
@@ -137,7 +150,7 @@ class HomePage extends StatelessWidget {
                             Container(
                                 height: 400,
                                 // child: homePageLoadFeed(context))
-                                child: _buildResults(bloc)),
+                                child: _buildResults(blocNews)),
                           ],
                         ),
                       ),
@@ -150,9 +163,9 @@ class HomePage extends StatelessWidget {
         ));
   }
 
-  Widget _buildResults(NewsBloc bloc) {
+  Widget _buildResults(NewsBloc blocNews) {
     return StreamBuilder<dynamic>(
-      stream: bloc.stream,
+      stream: blocNews.stream,
       builder: (context, streamResult) {
         final results = streamResult.data;
         if (results == null) {
