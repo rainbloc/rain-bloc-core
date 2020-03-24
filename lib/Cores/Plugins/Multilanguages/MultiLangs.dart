@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rainbloc/Cores/Plugins/Multilanguages/langs.dart';
 import 'package:rainbloc/DataSources/SharedPref/SPLang.dart';
-import 'package:rainbloc/UiViews/Langs/langs.dart';
 
 class MultiLangs {
   String _defaultLang = "en";

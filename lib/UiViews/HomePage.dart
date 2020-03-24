@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:rainbloc/BLoCs/BlocContainer.dart';
-import 'package:rainbloc/BLoCs/MultiLangBloc/MultiLangBloc.dart';
 import 'package:rainbloc/BLoCs/NewsBloc/NewsBloc.dart';
-import 'package:rainbloc/Cores/ViewComponents/MultiLangs.dart';
+import 'package:rainbloc/Cores/Plugins/Multilanguages/BLoCs/MultiLangBloc/MultiLangBloc.dart';
+import 'package:rainbloc/Cores/Plugins/Multilanguages/MultiLangs.dart';
 import 'package:rainbloc/DataSources/SharedPref/SPMember.dart';
 
 import 'HomepageComponents/HomepageFeed.dart';
