@@ -2,7 +2,12 @@
   <img src="https://i.imgur.com/EbGpvGO.png">
 </p>
 
-# RainBLoC
+| | |
+|-|-|
+| Version | 0.0.1-beta
+
+
+# RainBLoC 
 
 Welcome to **RainBLoC** Project. Rain bloc is the Flutter BLoC Architecture Starter Kit to make you starting development Mobile Application faster using Flutter.
 
