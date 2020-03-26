@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rainbloc/BLoCs/BlocContainer.dart';
-import 'package:rainbloc/BLoCs/LocationBloc/LocationBloc.dart';
-import 'package:rainbloc/DataSources/LocationDSModel.dart';
+import './BLoCs/BlocContainer.dart';
+import './BLoCs/LocationBloc/LocationBloc.dart';
+import './DataSources/LocationDSModel.dart';
 // import 'package:rainbloc/UiViews/HomeView.dart';
-import 'package:rainbloc/UiViews/RestaurantView.dart';
+import './UiViews/RestaurantView.dart';
 
 import 'UiViews/HomePage.dart';
 
@@ -19,7 +19,7 @@ class MainApp extends StatelessWidget {
           title: 'Hello Bloc App',
           theme: ThemeData(
             primarySwatch: Colors.blue,
-          ),
+          ), 
           home: MainScreen(),
         ));
   }
